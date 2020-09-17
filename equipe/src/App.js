@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./Components/Header/Header"
 import Sidebar from "./Components/Sidebar/Sidebar"
+import Chat from "./Components/Chat/Chat"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import "./App.css"
 
@@ -14,8 +15,7 @@ function App() {
                     {/* react-router -> Chat Screen*/}
                     <Switch>
                         <Route path="/room/:roomId">
-                            <h1>Chat Screen</h1>
-                            {/* Chat */}
+                            <Chat />
                         </Route>
                         <Route path="/">
                             <h1>Welcome!</h1>
