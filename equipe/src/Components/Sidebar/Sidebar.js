@@ -14,8 +14,11 @@ import PeopleAltIcon from "@material-ui/icons/PeopleAlt"
 import AppsIcon from "@material-ui/icons/Apps"
 import FileCopyIcon from "@material-ui/icons/FileCopy"
 import db from "../../Firebase/Firebase"
+import { useStateValue } from "../../Context/StateProvider"
+
 function Sidebar() {
     const [channels, setChannels] = useState([])
+    const [{ user }] = useStateValue()
 
     useEffect(() => {
         db.collection("rooms").onSnapshot((snapshot) => {
@@ -32,10 +35,10 @@ function Sidebar() {
         <div className="sidebar">
             <div className="sidebar_header">
                 <div className="sidebar_info">
-                    <h2>Likith's Channel</h2>
+                    <h2>Equipe Inc.</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                        Likith s reddy
+                        {user?.displayName}
                     </h3>
                 </div>
                 <CreateIcon />
