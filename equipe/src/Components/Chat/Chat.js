@@ -28,7 +28,7 @@ function Chat() {
             .onSnapshot((snapshot) => setRoomMessages(snapshot.docs.map((doc) => doc.data())))
     }, [roomId])
 
-    console.log(roomMessages)
+    console.log(roomDetails)
 
     return (
         <div className="chat">
@@ -56,7 +56,7 @@ function Chat() {
                     />
                 ))}
             </div>
-            <ChatInput channelName={roomDetails?.name} channelId={roomDetails?.channelId} />
+            <ChatInput channelName={roomDetails?.name} channelId={roomId} />
         </div>
     )
 }
