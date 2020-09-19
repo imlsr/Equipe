@@ -21,7 +21,7 @@ function Login() {
                 alert(error.message)
             })
     }
-
+    //GOOGLE OAuth
     return (
         <div className="login">
             <div className="login_container">
